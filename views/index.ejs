@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        function handleSubmit(form) {
+            const submitButton = form.querySelector('input[type="submit"]');
+            if (submitButton.disabled) return false;
+            submitButton.disabled = true;
+            return true;
+        }
+    </script>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Home Page</h1>
+
+    <form action="/form" method="post" onsubmit="return handleSubmit(this)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <br>
+        <label for="number">Number:</label><br>
+        <input type="text" id="number" name="number"><br>
+        <br>
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+        <br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date"><br>
+        <br>
+        <label for="text">Text:</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
+        <br>
+        <input type="submit" value="Submit Form">
+    </form>
+
+    <script src="/style.js"></script>
+</body>
+</html>
